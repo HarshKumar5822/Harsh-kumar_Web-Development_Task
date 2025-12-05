@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Perfume Shop - Full Stack Application
 
 A beautiful and modern perfume e-commerce website built with React, Node.js, Express, and MongoDB.
