@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Luxury Perfume Shop Design System */
+
+@layer base {
+  :root {
+    /* Base colors - Cream & Gold luxury palette */
+    --background: 40 20% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 97%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 25% 97%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Primary - Deep charcoal/black */
+    --primary: 30 10% 12%;
+    --primary-foreground: 40 20% 98%;
+
+    /* Secondary - Soft cream */
+    --secondary: 40 30% 94%;
+    --secondary-foreground: 30 10% 15%;
+
+    /* Muted - Warm gray */
+    --muted: 30 15% 90%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Accent - Elegant gold */
+    --accent: 38 65% 50%;
+    --accent-foreground: 30 10% 12%;
+
+    /* Gold variants */
+    --gold: 38 65% 50%;
+    --gold-light: 40 70% 65%;
+    --gold-dark: 35 60% 40%;
+    --rose-gold: 15 45% 65%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 20% 98%;
+
+    /* Borders */
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 38 65% 50%;
+
+    --radius: 0.375rem;
+
+    /* Sidebar */
+    --sidebar-background: 30 10% 12%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 38 65% 50%;
+    --sidebar-primary-foreground: 30 10% 12%;
+    --sidebar-accent: 30 15% 20%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 30 15% 25%;
+    --sidebar-ring: 38 65% 50%;
+
+    /* Custom design tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(30 10% 8%) 0%, hsl(30 15% 18%) 50%, hsl(30 10% 12%) 100%);
+    --gold-gradient: linear-gradient(135deg, hsl(38 65% 50%) 0%, hsl(40 70% 65%) 50%, hsl(38 65% 50%) 100%);
+    --card-gradient: linear-gradient(180deg, hsl(40 25% 99%) 0%, hsl(40 20% 96%) 100%);
+    
+    --shadow-gold: 0 4px 20px -2px hsla(38, 65%, 50%, 0.25);
+    --shadow-elegant: 0 10px 40px -10px hsla(30, 10%, 15%, 0.15);
+    --shadow-card: 0 4px 6px -1px hsla(30, 10%, 15%, 0.05), 0 2px 4px -2px hsla(30, 10%, 15%, 0.05);
+    --shadow-hover: 0 20px 50px -15px hsla(30, 10%, 15%, 0.2);
+
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .dark {
+    --background: 30 10% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 30 12% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 30 12% 12%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 40 20% 95%;
+    --primary-foreground: 30 10% 8%;
+
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 30 12% 20%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 38 65% 55%;
+    --accent-foreground: 30 10% 8%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 20% 95%;
+
+    --border: 30 12% 22%;
+    --input: 30 12% 22%;
+    --ring: 38 65% 55%;
+
+    --sidebar-background: 30 10% 6%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 38 65% 55%;
+    --sidebar-primary-foreground: 30 10% 8%;
+    --sidebar-accent: 30 12% 15%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 30 12% 18%;
+    --sidebar-ring: 38 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-elegant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  /* Gold text effect */
+  .text-gold-gradient {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hero section gradient background */
+  .bg-hero {
+    background: var(--hero-gradient);
+  }
+
+  /* Gold gradient background */
+  .bg-gold-gradient {
+    background: var(--gold-gradient);
+  }
+
+  /* Card gradient background */
+  .bg-card-gradient {
+    background: var(--card-gradient);
+  }
+
+  /* Elegant shadows */
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Gold border accent */
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+
+  /* Product card hover effect */
+  .product-card {
+    @apply relative overflow-hidden transition-smooth;
+  }
+
+  .product-card:hover {
+    @apply shadow-hover;
+    transform: translateY(-8px);
+  }
+
+  .product-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, hsla(38, 65%, 50%, 0.08) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .product-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Image zoom on hover */
+  .image-zoom {
+    @apply overflow-hidden;
+  }
+
+  .image-zoom img {
+    @apply transition-smooth;
+  }
+
+  .image-zoom:hover img {
+    transform: scale(1.08);
+  }
+
+  /* Underline animation */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-accent origin-left scale-x-0 transition-transform duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  /* Gold glow effect */
+  .glow-gold {
+    box-shadow: 0 0 30px hsla(38, 65%, 50%, 0.3);
+  }
+
+  /* Animate on scroll */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease forwards;
+  }
+
+  /* Stagger animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 0%,
+    hsl(var(--muted-foreground) / 0.1) 50%,
+    hsl(var(--muted)) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
