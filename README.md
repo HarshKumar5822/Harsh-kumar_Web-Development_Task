@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Perfume Shop - Full Stack Application
 
 A beautiful and modern perfume e-commerce website built with React, Node.js, Express, and MongoDB.
@@ -218,3 +219,6 @@ After running the application, you can take screenshots of:
 ---
 
 **Note**: Make sure MongoDB is running before starting the backend server. The application uses MongoDB to store all product and review data dynamically.
+=======
+# Harsh-kumar_Web-Development_Task
+>>>>>>> 67c50c0d13dc28a2c7b851d2c9ec262261c9ac55
